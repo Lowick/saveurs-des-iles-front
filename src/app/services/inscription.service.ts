@@ -18,7 +18,7 @@ export class InscriptionService {
       .post<ApiResponse>(`http://localhost:3000/api/auth/login`, data)
       .subscribe((res: ApiResponse) => {
         localStorage.setItem('token', res.accessToken);
-        // this.router.navigate(['/home']);
+        this.router.navigate(['/home']);
       });
   }
 
