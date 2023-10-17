@@ -9,3 +9,14 @@
   margin-right: 3rem;
   margin-top: 1rem;
 }
+
+.modal-content{
+     overflow-y: scroll;
+  border: 3px solid #64b6ac;
+  box-shadow: 0 4px 8px 0 rgba(100, 182, 172);
+  padding: 10px;
+  font-size: small;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 1rem;
+}

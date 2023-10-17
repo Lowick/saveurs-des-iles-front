@@ -12,6 +12,7 @@ import { CardRegisterComponent } from './components/card-register/card-register.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { CardLoginComponent } from './components/card-login/card-login.component';
+import { AvisModalComponent } from './avis-modal/avis-modal.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CardLoginComponent } from './components/card-login/card-login.component
     PagePresentationComponent,
     CardRegisterComponent,
     CardLoginComponent,
+    AvisModalComponent,
   ],
   imports: [
     ReactiveFormsModule,
