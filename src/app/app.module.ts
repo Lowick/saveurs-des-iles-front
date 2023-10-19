@@ -13,6 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { CardLoginComponent } from './components/card-login/card-login.component';
 import { AvisModalComponent } from './avis-modal/avis-modal.component';
+import { PagePlatComponent } from './pages/page-plat/page-plat.component';
+import { PlatListComponent } from './components/plat-list/plat-list.component';
+import { PageReservationComponent } from './pages/page-reservation/page-reservation.component';
 
 
 @NgModule({
@@ -27,6 +30,9 @@ import { AvisModalComponent } from './avis-modal/avis-modal.component';
     CardRegisterComponent,
     CardLoginComponent,
     AvisModalComponent,
+    PagePlatComponent,
+    PlatListComponent,
+    PageReservationComponent,
   ],
   imports: [
     ReactiveFormsModule,

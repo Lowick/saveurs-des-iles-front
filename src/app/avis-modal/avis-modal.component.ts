@@ -30,6 +30,8 @@ export class AvisModalComponent {
 
     const nouvelAvis = this.avisForm.value;
 
+    console.log('cest quoi:' + this.avisForm.value)
+
      this.avisService
               .create(nouvelAvis)
               .subscribe((avisdata) => {

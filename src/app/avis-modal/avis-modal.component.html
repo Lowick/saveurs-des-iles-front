@@ -4,11 +4,13 @@
     <div *ngIf="isModalOpen">
     <div class="modal-content">
         <h2>Créer un avis</h2>
+        
         <form [formGroup]="avisForm" (ngSubmit)="submitAvis()">
             <div class="form-group">
                 <label for="nom">Nom :</label>
                 <input type="text" id="nom" formControlName="nom">
             </div>
+
             <div class="form-group">
                 <label for="commentaire">Commentaire :</label>
                 <textarea id="commentaire" formControlName="commentaire"></textarea>

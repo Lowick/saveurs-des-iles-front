@@ -14,7 +14,8 @@ export class AvisService {
   create(
     
     avisdata:{idutilisateur:number; avis:string}
-  ){
+    
+  ){console.log('cest quoi ca:'+ avisdata)
     return this.http.post(
      `http://localhost:3000/api/avis`,avisdata
     );

@@ -2,3 +2,8 @@ img{
     width: 50%;
     justify-content:center;
 }
+
+.connexion{
+    display: flex;
+    justify-content: center;
+}
