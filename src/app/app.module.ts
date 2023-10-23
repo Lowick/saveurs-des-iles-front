@@ -16,6 +16,9 @@ import { AvisModalComponent } from './avis-modal/avis-modal.component';
 import { PagePlatComponent } from './pages/page-plat/page-plat.component';
 import { PlatListComponent } from './components/plat-list/plat-list.component';
 import { PageReservationComponent } from './pages/page-reservation/page-reservation.component';
+import { CreationPlatComponent } from './components/creation-plat/creation-plat.component';
+import { SuppressionPlatComponent } from './components/suppression-plat/suppression-plat.component';
+import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 
 
 @NgModule({
@@ -33,6 +36,9 @@ import { PageReservationComponent } from './pages/page-reservation/page-reservat
     PagePlatComponent,
     PlatListComponent,
     PageReservationComponent,
+    CreationPlatComponent,
+    SuppressionPlatComponent,
+    PageAdminComponent,
   ],
   imports: [
     ReactiveFormsModule,

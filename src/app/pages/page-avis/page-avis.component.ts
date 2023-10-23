@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Avis } from 'src/app/models/avis';
 import { AvisData } from 'src/app/models/avis-data';
+import { Utilisateur } from 'src/app/models/utilisateur';
 import { AvisService } from 'src/app/services/avis.service';
 
 @Component({
@@ -12,10 +13,11 @@ import { AvisService } from 'src/app/services/avis.service';
 export class PageAvisComponent {
 isModalOpen = false;
   avisForm: FormGroup;
+utilisateur?: Utilisateur;
 
   // avis!:string;
   // tabAvis: string[]=[];
-  tabAvisPseudo : Avis[] =[];
+  tabAvisPseudo : Avis[] = [];
 
   constructor(
     private avisService:AvisService, private formBuilder: FormBuilder,
@@ -32,6 +34,8 @@ isModalOpen = false;
     console.log(data);
     this.tabAvisPseudo = data;
  }
+
+ 
 );
   }
 

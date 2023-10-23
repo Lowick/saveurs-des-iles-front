@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Creation plat</h1>
+
+    <form [formGroup]="platForm" (ngSubmit)="onSubmit()">
+
+<div class="form-group">
+    <label for="nom"> Nom du plat</label>
+    <input type="text" class="form-control" formControlName="nom" name="nom">
+    </div>
+
+    <select  (change)="onCategorieChange($event)">
+        <option value="">categorie</option>
+        <option *ngFor="let categorie of categorieList" [value]="categorie">{{ categorie.nom }}</option>
+    </select>
+
+    <div class="form-group">
+    <label for="image">Image</label>
+    <input type="file" (change)="onVisualSelected($event)" class="form-control" accept="image/*" formControlName="imageid" name="image" id="image">
+</div>
+
+    <div class="center">
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </div>
+
+    </form>
+</div>
