@@ -13,7 +13,8 @@ import { AvisService } from 'src/app/services/avis.service';
 export class PageAvisComponent {
 isModalOpen = false;
   avisForm: FormGroup;
-utilisateur?: Utilisateur;
+pseudo:Utilisateur []=[];
+
 
   // avis!:string;
   // tabAvis: string[]=[];
@@ -22,7 +23,8 @@ utilisateur?: Utilisateur;
   constructor(
     private avisService:AvisService, private formBuilder: FormBuilder,
   ){this.avisForm = this.formBuilder.group({
-      commentaire:['', Validators.required]
+    pseudo:['', Validators.required],
+      avis:['', Validators.required]
     });}
 
   
@@ -35,7 +37,7 @@ utilisateur?: Utilisateur;
     this.tabAvisPseudo = data;
  }
 
- 
+
 );
   }
 
@@ -50,11 +52,12 @@ utilisateur?: Utilisateur;
   submitAvis(){
 
     const nouvelAvis = this.avisForm.value;
+    console.log('nouvel avis de quoi:', nouvelAvis);
 
      this.avisService
               .create(nouvelAvis)
-              .subscribe((avisdata) => {
-                console.log('avis soumis avec succès:', avisdata);
+              .subscribe((avisData) => {
+                console.log('avis soumis avec succès:', avisData);
               });
 
     console.log('Avis soumis:', this.avisForm.value);

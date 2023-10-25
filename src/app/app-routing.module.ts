@@ -8,6 +8,7 @@ import { PageReservationComponent } from './pages/page-reservation/page-reservat
 import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { CardLoginComponent } from './components/card-login/card-login.component';
 import { CardRegisterComponent } from './components/card-register/card-register.component';
+import { CreationPlatComponent } from './components/creation-plat/creation-plat.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'avis', component: PageAvisComponent},
   {path:'login', component:CardLoginComponent},
   {path:'register', component:CardRegisterComponent},
+  {path:'create', component:CreationPlatComponent},
   {path: 'reservation', component: PageReservationComponent},
   {path:'plat', component: PagePlatComponent},
   {path:'admin', component:PageAdminComponent},

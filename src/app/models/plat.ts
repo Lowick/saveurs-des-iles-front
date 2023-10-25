@@ -1,6 +1,7 @@
 export interface Plat {
+    id?:number;
     nom:string;
-    categorie:number;
-    imageid:number;
+    idcategorie:number;
+    idimage:number;
 
 }

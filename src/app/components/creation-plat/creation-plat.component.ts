@@ -21,6 +21,8 @@ export class CreationPlatComponent {
   image!:Images;
   selectedFile!:File;
   imageid!:number;
+  categorieid!:number;
+  selectedId!:number;
 
  
 
@@ -34,7 +36,7 @@ export class CreationPlatComponent {
   ngOnInit(): void{
     this.platForm = this.formbuilder.group({
       nom:['', Validators.required],
-      categorie:['', Validators.required],
+      categorieid:['', Validators.required],
       imageid:[null, Validators.required],
     })
 
@@ -47,9 +49,9 @@ export class CreationPlatComponent {
      onCategorieChange(event: Event) {
     const selectElement = event.target as HTMLSelectElement;
     console.log(selectElement);
-    const selectedId = selectElement.value;
+    this.selectedId = +selectElement.value;
     
-    this.categorieChanged.emit(selectedId);
+    this.categorieChanged.emit();
   }
 
   onSubmit() {
@@ -59,11 +61,10 @@ export class CreationPlatComponent {
       
       const platData = {
         nom: this.platForm.get('nom')?.value,
-        categorie:this.platForm.get('categorie')?.value,
-  
-        
-        imageid: this.imageid
+        idcategorie:this.selectedId,
+        idimage: this.imageid,
       };
+      (console.log('la data est elle bonne,:', platData));
     
   //  console.log('DATA ENVOYER AU BACKEND  : ', meditationData)
       // Envoyez les données à l'API
@@ -72,11 +73,11 @@ export class CreationPlatComponent {
           // Gérez la réponse du backend ici (par exemple, une redirection ou un message de succès)
           console.log('Réponse du backend :', response);
           console.log('this.imageId:', this.imageid);
-          this.router.navigate(['/profil']);
+          this.router.navigate(['/create']);
         },
         error: error => {
           // Gérez les erreurs ici
-          console.error('Erreur lors de l’ajout de la méditation:', error);
+          console.error('Erreur lors de l’ajout du plat:', error);
         }
       });
 
@@ -105,7 +106,7 @@ export class CreationPlatComponent {
   this.imageService.postImage(formData).subscribe({
     next:(response:any)=>{
       if(response && response.id){
-        console.log('Visuel enregistré avec succès. ID:', response.id);
+        alert('Visuel enregistré avec succès. ID:');
         this.imageid = response.id;
       }
 

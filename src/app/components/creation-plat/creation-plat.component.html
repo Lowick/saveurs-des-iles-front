@@ -8,10 +8,12 @@
     <input type="text" class="form-control" formControlName="nom" name="nom">
     </div>
 
-    <select  (change)="onCategorieChange($event)">
+    <div class="form-group">
+    <select  formControlName="categorieid" class="form-control" (change)="onCategorieChange($event)">
         <option value="">categorie</option>
-        <option *ngFor="let categorie of categorieList" [value]="categorie">{{ categorie.nom }}</option>
+        <option *ngFor="let categorie of categorieList" [value]="categorie.id">{{ categorie.nom }}</option>
     </select>
+</div>
 
     <div class="form-group">
     <label for="image">Image</label>
