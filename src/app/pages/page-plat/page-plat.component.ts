@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Plat } from 'src/app/models/plat';
 import { ImagesService } from 'src/app/services/images.service';
+import { PlatService } from 'src/app/services/plat.service';
 
 @Component({
   selector: 'app-page-plat',
@@ -8,20 +10,35 @@ import { ImagesService } from 'src/app/services/images.service';
 })
 export class PagePlatComponent {
   currentImage!:Blob;
-  platToShow!:any;
+  platCurrentImage!:Blob;
+  platImage!:any;
   isImageLoading!: Boolean;
+  platList!:Plat[]
 
   constructor(
+    private platService: PlatService,
     private imagesService: ImagesService
   ){}
 
-  async createImageFromBlob(image: Blob) {
-      let reader = await new FileReader();
+  ngOnInit(){
+    this.platService.getAllPlat().subscribe({
+      next:(response)=>{
+        this.platList=response;
+      }
+    })
+  }
+
+  createImageFromBlob(image: Blob) {
+      let reader =  new FileReader();
     reader.readAsDataURL(image);
     reader.addEventListener('load', () => {
-      this.platToShow = reader.result;
+      this.platImage= reader.result;
     });
   }
+
+
+
+
   getImageFromService() {
     this.isImageLoading = true;
     this.imagesService.getImage().subscribe({

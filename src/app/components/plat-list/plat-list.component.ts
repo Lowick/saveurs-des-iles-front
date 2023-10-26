@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Plat } from 'src/app/models/plat';
 
 @Component({
   selector: 'app-plat-list',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./plat-list.component.css']
 })
 export class PlatListComponent {
-// @Input() plat!: 
+@Input() plat!: Plat[];
 }

@@ -22,5 +22,8 @@ export class PlatService {
     return this.http.get<Plat[]>('http://localhost:3000/api/plat');
   }
 
+   getPlatById(id:number){
+    return this.http.get(`hhtp://localhost:3000/api/plat/${id}`)
+  }
 
 }

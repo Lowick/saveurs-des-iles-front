@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class ImagesService {
 images:Images[] = [];
 
+private baseUrl = 'http://localhost:3000/api/image/'
+
   constructor(private http:HttpClient) {}
 
   getImage(){
@@ -16,8 +18,8 @@ images:Images[] = [];
     });
   }
 
-  getImageById(id:number){
-    return this.http.get(`http:localhost:3000/api/image/${id}`,{
+  getImageById(id:string){
+    return this.http.get(this.baseUrl+ id,{
       responseType:'blob',})
   }
 

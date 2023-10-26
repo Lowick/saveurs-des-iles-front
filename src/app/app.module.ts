@@ -19,6 +19,7 @@ import { PageReservationComponent } from './pages/page-reservation/page-reservat
 import { CreationPlatComponent } from './components/creation-plat/creation-plat.component';
 import { SuppressionPlatComponent } from './components/suppression-plat/suppression-plat.component';
 import { PageAdminComponent } from './pages/page-admin/page-admin.component';
+import { CardPlatComponent } from './components/card-plat/card-plat.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { PageAdminComponent } from './pages/page-admin/page-admin.component';
     CreationPlatComponent,
     SuppressionPlatComponent,
     PageAdminComponent,
+    CardPlatComponent,
   ],
   imports: [
     ReactiveFormsModule,
