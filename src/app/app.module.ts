@@ -20,6 +20,8 @@ import { CreationPlatComponent } from './components/creation-plat/creation-plat.
 import { SuppressionPlatComponent } from './components/suppression-plat/suppression-plat.component';
 import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { CardPlatComponent } from './components/card-plat/card-plat.component';
+import { FormulaireComponent } from './components/formulaire/formulaire.component';
+import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { CardPlatComponent } from './components/card-plat/card-plat.component';
     SuppressionPlatComponent,
     PageAdminComponent,
     CardPlatComponent,
+    FormulaireComponent,
+    FilterBarComponent,
   ],
   imports: [
     ReactiveFormsModule,

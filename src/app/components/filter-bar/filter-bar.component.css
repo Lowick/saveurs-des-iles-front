@@ -1,0 +1,12 @@
+.filter-bar.form-check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0px;
+  width: 17rem;
+  top: 56px;
+}
+
+ .css1{
+    position: sticky;
+ }

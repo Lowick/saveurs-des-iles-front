@@ -1,3 +1,13 @@
 
+<div class="first">
+ 
 
-<app-plat-list [plat]="platList"></app-plat-list>
+
+<app-filter-bar [allCategories]="allCategories" (categorieEnvoiParents)="aLecouteDeLenfant($event)"></app-filter-bar>
+    
+    
+    <p>Veuillez trouver une sélection des plats que nous proposons:</p>
+
+<app-plat-list [plat]="platsFilter"></app-plat-list>
+
+</div>

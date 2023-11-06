@@ -1,8 +1,8 @@
 .reviews {
   /* max-height: 200px; */
   overflow-y: scroll;
-  border: 3px solid #64b6ac;
-  box-shadow: 0 4px 8px 0 rgba(100, 182, 172);
+  border: 3px solid #f0f407;
+  box-shadow: 0 4px 8px 0 rgb(14, 143, 236);
   padding: 10px;
   font-size: small;
   margin-left: 3rem;
