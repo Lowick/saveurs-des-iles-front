@@ -12,7 +12,7 @@ constructor(private http:HttpClient) { }
 
   create(reservation:Reservation): Observable<Reservation>{
     return this.http.post<Reservation>(
-      `http://localhost:3000/api/reservation,`, reservation
+      `http://localhost:3000/api/reservation`, reservation
     );
   }
 

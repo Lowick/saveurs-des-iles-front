@@ -34,7 +34,7 @@ export class DeletePlatComponent {
       return;
     }
     this.platService.deletePlat(plat.id).subscribe((response)=>{
-      console.log('leplat a bien été supprimé.' + response);
+      console.log('le plat a bien été supprimé.' + response);
     });
     alert('Votre plat a bien été supprimé.')
     

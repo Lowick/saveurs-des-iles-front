@@ -38,11 +38,12 @@ export class FormulaireComponent {
 
   
   onSubmit() {
+    
    console.log('FORMULAIRE ENVOYER',this.reservationForm.value)
     if (this.reservationForm.valid) {
-
+ const reservation = {...this.reservationForm.value, idutilisateur:Number(localStorage.getItem('id'))};
       
-      const reservation = this.reservationForm.value;
+     
       
       (console.log('la data est elle bonne,:', reservation));
     
@@ -57,7 +58,7 @@ export class FormulaireComponent {
         },
         error: error => {
           // Gérez les erreurs ici
-          console.error('Erreur lors de l’ajout du plat:', error);
+          console.error('Erreur lors de la création de la reservation:', error);
         }
       });
 
