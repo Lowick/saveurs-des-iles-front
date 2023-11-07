@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthInterceptorService } from 'src/app/services/auth-interceptor.service';
 import { InscriptionService } from 'src/app/services/inscription.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { InscriptionService } from 'src/app/services/inscription.service';
 })
 export class CardLoginComponent implements OnInit {
 
-  constructor( private fb: FormBuilder, private inscriptionService: InscriptionService){}
+  constructor( private fb: FormBuilder, private inscriptionService: InscriptionService, private authInterceptorService: AuthInterceptorService){}
   ngOnInit(): void {
   }
 

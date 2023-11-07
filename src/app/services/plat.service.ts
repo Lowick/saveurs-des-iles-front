@@ -26,4 +26,10 @@ export class PlatService {
     return this.http.get(`hhtp://localhost:3000/api/plat/${id}`)
   }
 
+   deletePlat(id: number): Observable<Plat> {
+  
+    return this.http.delete<Plat>(`http://localhost:3000/api/plat/${id}`);
+}
+
+
 }

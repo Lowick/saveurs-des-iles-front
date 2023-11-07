@@ -1,0 +1,36 @@
+<p>Modification</p>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">nom</th>
+                <th scope="col">idcategorie</th>
+                <th scope="col">idimage</th>
+                <th scope="col">action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let plat of plats; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{plat.nom}}</td>
+                <td>{{plat.idcategorie}}</td>
+                <td>{{plat.idimage}}</td>
+                <td>
+
+                
+                    <button type="button" class="btn btn-danger" (click)="delete(plat)">
+                        <i class="fa fa-trash" aria-hidden="true"></i> Supprimer
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+  
+
+</div>

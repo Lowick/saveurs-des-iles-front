@@ -22,6 +22,7 @@ import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { CardPlatComponent } from './components/card-plat/card-plat.component';
 import { FormulaireComponent } from './components/formulaire/formulaire.component';
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
+import { DeletePlatComponent } from './components/delete-plat/delete-plat.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { FilterBarComponent } from './components/filter-bar/filter-bar.component
     CardPlatComponent,
     FormulaireComponent,
     FilterBarComponent,
+    DeletePlatComponent,
   ],
   imports: [
     ReactiveFormsModule,

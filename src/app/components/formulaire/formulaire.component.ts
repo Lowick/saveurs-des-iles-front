@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Reservation } from 'src/app/models/reservation';
+import { Utilisateur } from 'src/app/models/utilisateur';
 import { ReservationService } from 'src/app/services/reservation.service';
 import { UtilisateurService } from 'src/app/services/utilisateur.service';
 
@@ -13,7 +14,8 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
 export class FormulaireComponent {
   reservationForm!: FormGroup;
   reservation!:Reservation;
-  idutilisateur!:number;
+  utilisateur!:number;
+  utilisateurs:Utilisateur[] = [];
 
   constructor(
     private formbuilder: FormBuilder,
@@ -27,11 +29,11 @@ export class FormulaireComponent {
       nom:['', Validators.required],
       prenom:['', Validators.required],
       service:['', Validators.required],
-      personnes:['', Validators.required],
+      nombre_de_personne:['', Validators.required],
       telephone:['', Validators.required],
-      commentaire:['', Validators.required]
-
-    })
+      message:['', Validators.required],
+    idutilisateur: [null]
+    });
   }
 
   
@@ -40,15 +42,8 @@ export class FormulaireComponent {
     if (this.reservationForm.valid) {
 
       
-      const reservation = {
-        nom: this.reservationForm.get('nom')?.value,
-        prenom: this.reservationForm.get('prenom')?.value,
-        service:this.reservationForm.get('service')?.value,
-        nombre_de_personne:this.reservationForm.get('personnes')?.value,
-        telephone:this.reservationForm.get('telephone')?.value,
-        message:this.reservationForm.get('commentaire')?.value,
-        idutilisateur:this.idutilisateur,
-      };
+      const reservation = this.reservationForm.value;
+      
       (console.log('la data est elle bonne,:', reservation));
     
  

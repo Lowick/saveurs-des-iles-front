@@ -9,6 +9,7 @@ import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { CardLoginComponent } from './components/card-login/card-login.component';
 import { CardRegisterComponent } from './components/card-register/card-register.component';
 import { CreationPlatComponent } from './components/creation-plat/creation-plat.component';
+import { DeletePlatComponent } from './components/delete-plat/delete-plat.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'login', component:CardLoginComponent},
   {path:'register', component:CardRegisterComponent},
   {path:'create', component:CreationPlatComponent},
+  {path:'delete', component:DeletePlatComponent},
   {path: 'reservation', component: PageReservationComponent},
   {path:'plat', component: PagePlatComponent},
   {path:'admin', component:PageAdminComponent},
