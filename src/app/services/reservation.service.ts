@@ -20,4 +20,8 @@ constructor(private http:HttpClient) { }
  getAllReservation():Observable<Reservation[]>{
     return this.http.get<Reservation[]>('http://localhost:3000/api/reservation');
   }
+
+  deleteReservation(id:number):Observable<Reservation>{
+    return this.http.delete<Reservation>(`http://localhost:3000/api/reservation/${id}`);
+  }
 }

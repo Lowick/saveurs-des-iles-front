@@ -23,6 +23,7 @@ import { CardPlatComponent } from './components/card-plat/card-plat.component';
 import { FormulaireComponent } from './components/formulaire/formulaire.component';
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 import { DeletePlatComponent } from './components/delete-plat/delete-plat.component';
+import { ReponseFormulaireComponent } from './components/reponse-formulaire/reponse-formulaire.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { DeletePlatComponent } from './components/delete-plat/delete-plat.compon
     FormulaireComponent,
     FilterBarComponent,
     DeletePlatComponent,
+    ReponseFormulaireComponent,
   ],
   imports: [
     ReactiveFormsModule,
