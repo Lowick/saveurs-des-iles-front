@@ -20,3 +20,20 @@
   margin-right: 3rem;
   margin-top: 1rem;
 }
+
+.container{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.reviews div {
+    margin-bottom: 10px; /* Ajouter de l'espace entre les avis */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px; /* Redimensionner la police */
+}
+
+.reviews p {
+    margin: 5px 0; /* Ajouter de l'espace entre les lignes */
+}

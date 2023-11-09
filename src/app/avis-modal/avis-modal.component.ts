@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { AvisService } from '../services/avis.service';
+import { UtilisateurService } from '../services/utilisateur.service';
+import { Utilisateur } from '../models/utilisateur';
+import { Avis } from '../models/avis';
 
 @Component({
   selector: 'app-avis-modal',
@@ -9,14 +12,21 @@ import { AvisService } from '../services/avis.service';
 })
 export class AvisModalComponent {
   isModalOpen = true;
-  avisForm: FormGroup;
+  avisForm!: FormGroup;
+  pseudo:Utilisateur[]=[];
+  utilisateur!:number;
+  utilisateurs:Utilisateur[] = [];
 
-  constructor(private formBuilder: FormBuilder, private avisService:AvisService){
+  avis!:Avis[];
+
+  constructor(private formBuilder: FormBuilder, private avisService:AvisService, private utilisateurService:UtilisateurService){}
+   
+   ngOnInit():void{
     this.avisForm = this.formBuilder.group({
-      nom:['', Validators.required],
-      commentaire:['', Validators.required]
+      commentaire:['', Validators.required],
+      idutilisateur:[null]
     });
-  }
+   }
 
   openModal(){
     this.isModalOpen = true;
@@ -28,12 +38,13 @@ export class AvisModalComponent {
 
   submitAvis(){
 
-    const nouvelAvis = this.avisForm.value;
+    if(this.avisForm.valid){
+    const avis = {...this.avisForm.value, idutilisateur:Number(localStorage.getItem('id'))};
 
     console.log('cest quoi:' + this.avisForm.value)
 
      this.avisService
-              .create(nouvelAvis)
+              .create(avis)
               .subscribe((avisdata) => {
                 console.log('avis soumis avec succès:', avisdata);
               });
@@ -42,4 +53,4 @@ export class AvisModalComponent {
     this.closeModal();
   }
 
-}
+}}

@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Utilisateur } from '../models/utilisateur';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class InscriptionService {
 
+  
+  
   constructor(private http: HttpClient, private router: Router) {}
 
    login(data: { email: string; password: string }) {
@@ -20,7 +23,9 @@ export class InscriptionService {
       .post<ApiResponse>(`http://localhost:3000/api/auth/login`, data)
       .subscribe((res: ApiResponse) => {
         localStorage.setItem('token', res.accessToken);
-        localStorage.setItem('id',res.utilisateur.id!.toString())
+        localStorage.setItem('id',res.utilisateur.id!.toString());
+        localStorage.setItem('pseudo', res.utilisateur.pseudo)
+        
        
         this.router.navigate(['/home']);
       });
