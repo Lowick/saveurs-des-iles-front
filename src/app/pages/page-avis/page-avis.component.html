@@ -11,16 +11,16 @@
 </div>
 </div>
 
- <button (click)="openModal()">donne ton avis</button> 
+ <button class="boutton" (click)="openModal()">donne ton avis</button> 
 
- <div *ngIf="isModalOpen">
+ <div *ngIf="isModalOpen" class="overlay" >
     <div class="modal-content">
-        <h2>Créer un avis</h2>
+        <h2>Votre avis nous intéresse</h2>
 
             <p>{{pseudo}}</p>
         <form [formGroup]="avisForm" (ngSubmit)="submitAvis()">
 
-            <div class="form-group">
+            <div class="form-group d-flex flex-column">
                 <label for="avis">Avis :</label>
                 <textarea id="avis" formControlName="avis"></textarea>
             </div>

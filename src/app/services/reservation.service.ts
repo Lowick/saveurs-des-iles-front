@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Reservation } from '../models/reservation';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservationService {
+  public suppression$= new Subject<Reservation[]>;
 
 constructor(private http:HttpClient) { }
 

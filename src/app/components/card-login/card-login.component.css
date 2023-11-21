@@ -1,9 +1,24 @@
 .container{
-    width: 25rem;
-    height: 30rem;
-    padding: 20px;
-    border: 1px solid #cccccc;
+   border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 400px; /* Ajustez la largeur selon vos besoins */
+    margin: 20px auto; /* Pour centrer la carte horizontalement */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: hsla(0, 0%, 100%, 0.50);
+}
+
+input{
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+button{
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
     border-radius: 5px;
-    /* box-shadow: 0 4px 8px 0 rgba(100,182,172); */
-    margin: 1rem;
+    cursor: pointer;
 }

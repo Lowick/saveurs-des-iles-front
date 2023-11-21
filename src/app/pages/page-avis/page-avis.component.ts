@@ -13,22 +13,26 @@ import { AvisService } from 'src/app/services/avis.service';
 export class PageAvisComponent {
 isModalOpen = false;
   avisForm!: FormGroup;
-pseudo:Utilisateur []=[];
+pseudo!:Utilisateur [];
   utilisateur!:number;
   utilisateurs:Utilisateur[] = [];
+  
 
-
+ 
   // avis!:string;
   // tabAvis: string[]=[];
   tabAvisPseudo : Avis[] = [];
 
   constructor(
-    private avisService:AvisService, private formBuilder: FormBuilder
+    private avisService:AvisService, private formBuilder: FormBuilder,
   ){}
 
   
 
   ngOnInit():void{
+    this.avisService.postAvis$.subscribe((resp)=>{
+      this.tabAvisPseudo=resp;
+    })
 
     this.avisService.getAllAvis().subscribe(
   (data) => {
@@ -63,11 +67,16 @@ this.avisForm = this.formBuilder.group({
               .create(avis)
               .subscribe((avisdata) => {
                 console.log('avis soumis avec succès:', avisdata);
+     this.avisService.getAllAvis().subscribe((data)=>{
+      this.tabAvisPseudo=data;
+      this.avisService.postAvis$.next(data);
+     })           
+                
               });
 
     console.log('Avis soumis:', this.avisForm.value);
-    this.tabAvisPseudo.push(avis);
-    console.log
+    
+   
     this.closeModal();
   }
  

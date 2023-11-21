@@ -24,8 +24,12 @@ export class CardLoginComponent implements OnInit {
       email: this.loginForm.get('email')?.value,
       password: this.loginForm.get('password')?.value,
     };
+    this.inscriptionService.isConnected$.next(true);
     this.inscriptionService.login(data);
     alert('ok bon voyage')
   }
 
+  connecter(){
+    this.inscriptionService.isConnected$.next(true);
+  }
 }

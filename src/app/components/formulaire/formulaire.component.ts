@@ -53,6 +53,8 @@ export class FormulaireComponent {
         next: response => {
           // Gérez la réponse du backend ici (par exemple, une redirection ou un message de succès)
           console.log('Réponse du backend :', response);
+
+          alert('Votre formulaire a bien été pris en compte, nous vous recontacterons dès réception.')
          
           this.router.navigate(['/home']);
         },

@@ -1,13 +1,14 @@
 
 <div class="first">
  
-
+<div class="filtre">
 
 <app-filter-bar [allCategories]="allCategories" (categorieEnvoiParents)="aLecouteDeLenfant($event)"></app-filter-bar>
-    
-    
+</div>    
+
+<div class="platList">
     <p>Veuillez trouver une sélection des plats que nous proposons:</p>
 
 <app-plat-list [plat]="platsFilter"></app-plat-list>
-
+</div>
 </div>

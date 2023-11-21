@@ -16,6 +16,11 @@ export class ReponseFormulaireComponent {
   ){}
 
   ngOnInit():void{
+
+    this.reservationService.suppression$.subscribe((resp)=>{
+this.reservations=resp;
+    });
+
     this.reservationService.getAllReservation().subscribe((data:Reservation[])=>{
       this.reservations=data;
     });
@@ -29,11 +34,17 @@ export class ReponseFormulaireComponent {
     if(!confirmDelete){
       return;
     }
-    this.reservationService.deleteReservation(id).subscribe((response)=>{
-      console.log('la reservation a bien été supprimée.' + response);
+    this.reservationService.deleteReservation(id).subscribe((data)=>{
+
+      this.reservationService.getAllReservation().subscribe((data:Reservation[])=>{
+       this.reservationService.suppression$.next(data); 
+      })
+      
+      console.log('la reservation a bien été supprimée.' + data);
+      
     });
     alert('La reservation a bien été supprimée.')
-    location.reload();
+    
 }
 
 

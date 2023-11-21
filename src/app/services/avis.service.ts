@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Avis } from '../models/avis';
-import { Observable, observable } from 'rxjs';
+import { Observable, Subject, observable } from 'rxjs';
 import { AvisData } from '../models/avis-data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AvisService {
+public postAvis$= new Subject<Avis[]>;
 
   constructor(private http: HttpClient) {}
 
